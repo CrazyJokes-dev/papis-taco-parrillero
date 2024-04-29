@@ -9,7 +9,7 @@ function ShowFoodList() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8082/api/Foods')
+      .get('http://localhost:8000/api/Foods')
       .then((res) => {
         setFoods(res.data);
       })
@@ -35,10 +35,9 @@ function ShowFoodList() {
           <div className='col-md-11'>
             <Link
               to='/create-Food'
-              className='btn btn-outline-warning float-right'
-            >
+              className='btn btn-outline-warning float-right'>
               + Add New Food
-            </Link>
+            </Link> 
             <br />
             <br />
             <hr />

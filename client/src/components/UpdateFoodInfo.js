@@ -18,7 +18,7 @@ function UpdateFoodInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/Foods/${id}`)
+      .get(`http://localhost:8000/api/Foods/${id}`)
       .then((res) => {
         setFood({
           title: res.data.title,
@@ -51,7 +51,7 @@ function UpdateFoodInfo(props) {
     };
 
     axios
-      .put(`http://localhost:8082/api/Foods/${id}`, data)
+      .put(`http://localhost:8000/api/Foods/${id}`, data)
       .then((res) => {
         navigate(`/show-Food/${id}`);
       })

@@ -11,7 +11,7 @@ function ShowFoodDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/Foods/${id}`)
+      .get(`http://localhost:8000/api/Foods/${id}`)
       .then((res) => {
         setFood(res.data);
       })
@@ -22,7 +22,7 @@ function ShowFoodDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:8082/api/Foods/${id}`)
+      .delete(`http://localhost:8000/api/Foods/${id}`)
       .then((res) => {
         navigate('/');
       })

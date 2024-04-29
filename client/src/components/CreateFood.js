@@ -24,7 +24,7 @@ const CreateFood = (props) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8082/api/Foods', Food)
+      .post('http://localhost:8000/api/Foods', Food)
       .then((res) => {
         setFood({
           title: '',

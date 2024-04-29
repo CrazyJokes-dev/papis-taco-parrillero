@@ -1,0 +1,34 @@
+.header-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Logo-Wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar-nav {
+	width: 600px
+}
+
+body {
+	font-size: 1.5rem;
+	height: 100%;
+	margin: 0
+}
+
+.navbar-brand, .nav-link {
+	color: rgba(255, 255, 255, 0.7) !important
+}
+
+.navbar-brand:hover, .nav-link:hover {
+	color: rgba(255, 255, 255, 1) !important
+}
+
+#Truck-Logo {
+	height: 210px;
+	width: 210px
+}

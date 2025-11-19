@@ -1,0 +1,29 @@
+:root{
+	--brand: #ff6a00;
+}
+
+.contact-page{
+	padding: 32px 0 56px;
+	background: linear-gradient(180deg, rgba(255,250,240,0.6), rgba(255,250,240,0.3));
+}
+
+.contact-card{
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.contact-card .lead{
+	color: rgba(0,0,0,0.7);
+}
+
+.contact-form .form-control{
+	border-radius: 6px;
+	box-shadow: none;
+}
+
+.contact-form .btn-warning{ background: var(--brand); border: none; }
+
+@media (max-width: 768px){
+	.contact-page{ padding: 20px 0; }
+	.contact-card{ padding: 12px; }
+}

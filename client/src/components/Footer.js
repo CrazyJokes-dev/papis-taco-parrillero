@@ -2,24 +2,36 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../Header.css';
+import '../Footer.css';
 
 function Footer() {
 	return (
-		<div style={{ backgroundColor: 'rgba(255, 165, 0, 0.2', paddingTop: '25px'}}>
-			<h2 style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Contact Us</h2>
-			<Container style={{ 
-				backgroundColor: 'rgba(0, 0, 0, 0.2)'
-				}}>
-				<Row>
-					<Col sm={4}><strong>Email:</strong></Col>
-					<Col sm={6}>papistacosparrillero@gmail.com</Col>
+		<footer className="site-footer">
+			<Container>
+				<Row className="footer-top">
+					<Col md={4} className="footer-brand">
+						<h3>Papi's Taco Parrillero</h3>
+						<p className="muted">Authentic flavors from our truck to your plate.</p>
+					</Col>
+					<Col md={4} className="footer-contact">
+						<h4>Contact</h4>
+						<p><strong>Email:</strong> <a href="mailto:papistacosparrillero@gmail.com">papistacosparrillero@gmail.com</a></p>
+						<p><strong>Phone:</strong> <a href="tel:+12487986784">(248) 798-6784</a></p>
+					</Col>
+					<Col md={4} className="footer-social">
+						<h4>Follow Us</h4>
+						<div className="social-links">
+							<a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="social">Instagram</a>
+							<a href="https://facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className="social">Facebook</a>
+							<a href="https://wa.me/12487986784" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="social">WhatsApp</a>
+						</div>
+					</Col>
 				</Row>
-				<Row>
-					<Col sm={4}><strong>Phone Number:</strong></Col>
-					<Col sm={6}>248-798-6784</Col>
+				<Row className="footer-bottom">
+					<Col className="copyright">© {new Date().getFullYear()} Papi's Tacos Parrillero — All rights reserved.</Col>
 				</Row>
-			</Container>  
-		</div>
+			</Container>
+		</footer>
 	)
 }
 

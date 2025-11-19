@@ -1,0 +1,38 @@
+:root{
+	--brand: #ff6a00;
+	--bg: #0f0f0f;
+	--muted: rgba(255,255,255,0.85);
+}
+
+.location-page{
+	padding: 28px 0 48px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));
+}
+
+.page-title{ margin: 0 0 6px; font-weight:700; }
+.lead{ color: rgba(0,0,0,0.7); margin-bottom: 16px; }
+
+.location-card{ 
+	background: linear-gradient(180deg, #fff, #fff);
+	border-radius:8px; 
+	box-shadow: 0 8px 22px rgba(0,0,0,0.07); 
+}
+.location-card .card-title{ color: var(--brand); }
+
+.hours-table td{ vertical-align: middle; }
+.hours-table .day{ width: 38%; font-weight:600; }
+.hours-table .time{ color: rgba(0,0,0,0.8); }
+
+.map-wrapper{ 
+	border-radius:8px; 
+	overflow:hidden; 
+	box-shadow: 0 8px 22px rgba(0,0,0,0.08); 
+}
+
+.muted{ color: rgba(0,0,0,0.6); }
+
+@media (max-width: 768px){
+	.map-wrapper iframe{ height: 260px !important; }
+	.lead, .muted{ text-align:center; }
+	.location-card, .hours-table{ width:100%; }
+}

@@ -25,14 +25,35 @@ function ContactUs() {
       return;
     }
 
-    // Use mailto as a simple fallback to send messages via the user's email client.
-    const subject = encodeURIComponent(`Contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    const mailto = `mailto:papistacosparrillero@gmail.com?subject=${subject}&body=${body}`;
+    // Try to POST to backend API; fall back to mailto if network fails.
+    const payload = { name, email, message };
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const txt = await res.text();
+          throw new Error(txt || 'Server error');
+        }
+        return res.json();
+      })
+      .then((json) => {
+        setStatus({ type: 'success', message: json.msg || 'Message sent. Thank you!' });
+        setForm({ name: '', email: '', message: '' });
+        console.log('data -- ', json);
+      })
+      .catch((err) => {
+        console.error('Contact submit failed:', err);
+        // fallback to mailto
+        const subject = encodeURIComponent(`Contact from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        const mailto = `mailto:papistacosparrillero@gmail.com?subject=${subject}&body=${body}`;
 
-    // Try opening user's email client
-    window.location.href = mailto;
-    setStatus({ type: 'success', message: 'Opening your email client to send the message.' });
+        window.location.href = mailto;
+        setStatus({ type: 'warning', message: 'Could not reach server — opening your email client as fallback.' });
+      });
   }
 
   return (

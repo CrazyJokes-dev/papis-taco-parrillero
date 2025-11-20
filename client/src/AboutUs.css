@@ -1,0 +1,28 @@
+:root{
+  --brand: #ff6a00;
+  --muted: rgba(0,0,0,0.7);
+}
+
+.about-page{
+  padding: 36px 0 64px;
+}
+
+.about-top{ gap: 20px; }
+
+.about-hero h1{ font-size: 2rem; margin-bottom: 8px; }
+.about-hero .tagline{ color: var(--brand); font-weight:700; margin-bottom:12px; }
+.about-hero .lead{ color: var(--muted); }
+
+.photo-card{ border-radius: 10px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+.photo-card .photo{ width:100%; height: auto; display:block; }
+
+.story-row .story{ padding: 0 12px; }
+.story-row h3{ margin-bottom:8px; }
+
+.values{ list-style: none; padding-left: 0; display:flex; gap: 18px; flex-wrap:wrap; }
+.values li{ background: rgba(255,106,0,0.06); padding: 10px 14px; border-radius: 8px; min-width:200px; }
+
+@media (max-width: 768px){
+  .about-hero h1{ font-size: 1.6rem; }
+  .values{ flex-direction: column; }
+}

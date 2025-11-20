@@ -11,7 +11,7 @@ function NavComponent() {
             <Nav.Link href="/contact-us">Contact Us</Nav.Link>
             <Nav.Link href="/location-and-hours">Location and Hours</Nav.Link>
             <Nav.Link href="#home">Menu</Nav.Link>
-            <Nav.Link href="#about-us">About Us</Nav.Link>
+            <Nav.Link href="/about-us">About Us</Nav.Link>
           </Nav>
       </Container>
     </Navbar>

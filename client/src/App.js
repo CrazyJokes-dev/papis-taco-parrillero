@@ -6,6 +6,7 @@ import ShowFoodDetails from './components/ShowFoodDetails';
 import UpdateFoodInfo from './components/UpdateFoodInfo';
 import LocationHoursPage from './components/LocationHoursPage';
 import ContactUs from './components/ContactUs';
+import AboutUs from './components/AboutUs';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path='/' element={<ShowFoodList />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/location-and-hours' element={<LocationHoursPage />} />
+          <Route path='/about-us' element={<AboutUs />} />
           <Route path='/create-Food' element={<CreateFood />} />
           <Route path='/edit-Food/:id' element={<UpdateFoodInfo />} />
           <Route path='/show-Food/:id' element={<ShowFoodDetails />} />

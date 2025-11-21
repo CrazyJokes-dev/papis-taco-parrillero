@@ -1,19 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
 
+const nodemailer = require('nodemailer');
+const emailConfig = require('../../config/email');
 // Load Contact model
 const Contact = require('../../models/Contacts');
 
+
 // GET /api/contact
 // Description: Gets all contact messages (for admin/testing purposes)
-router.get('/', (req, res) => {
-  Contact.find({})
-    .then(Contacts => res.json(Contacts))
-    .catch(err => res.status(404).json({
-      noContactsFound: 'No Contacts Yet'
-    })
-  );
+router.get('/', async (req, res) => {
+  try {
+    const contacts = await Contact.find({})
+    return res.status(200).json({
+      count: contacts.length,
+      data: contacts,
+      // idk: emailConfig.emailConfig.user  // TEST ON HOW TO CALL VARIABLES
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server Error'
+    });
+  }
 });
 
 // POST /api/contact
@@ -26,22 +35,22 @@ router.post('/addContact', async (req, res) => {
 
   // If SMTP configuration is available, try to send an email.
   // Configure via environment variables: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
-  // const smtpHost = process.env.SMTP_HOST;
+  // const smtpHost = emailConfig.emailConfig.host;
   // if (smtpHost) {
   //   try {
   //     const transporter = nodemailer.createTransport({
   //       host: smtpHost,
-  //       port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587,
-  //       secure: process.env.SMTP_SECURE === 'true',
-  //       auth: process.env.SMTP_USER ? {
-  //         user: process.env.SMTP_USER,
-  //         pass: process.env.SMTP_PASS
-  //       } : undefined
+  //       port: emailConfig.emailConfig.port,
+  //       secure: emailConfig.emailConfig.secure,
+  //       auth: {
+  //         user: emailConfig.emailConfig.user,
+  //         pass: emailConfig.emailConfig.pass
+  //       }
   //     });
 
   //     const mailOptions = {
-  //       from: process.env.SMTP_FROM || `no-reply@${req.hostname}`,
-  //       to: process.env.CONTACT_TO || process.env.SMTP_USER,
+  //       from: 'monstertube101@gmail.com',
+  //       to: emailConfig.emailConfig.user,
   //       subject: `Contact form: ${name}`,
   //       text: `Name: ${name}\nEmail: ${email}\n\n${message}`
   //     };

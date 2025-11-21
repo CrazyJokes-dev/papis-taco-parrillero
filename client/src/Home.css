@@ -1,0 +1,71 @@
+:root {
+  --brand: #ff6a00;
+  --muted: rgba(0,0,0,0.7);
+}
+
+.home-page {
+  background: linear-gradient(180deg, #fffbe6 0%, #fff 100%);
+}
+
+.hero-section {
+  padding: 48px 0 32px;
+  background: linear-gradient(90deg, #ffefc1 60%, #fff6e0 100%);
+}
+
+.hero-text h1 {
+	text-align: center;
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 10px; 
+}
+.hero-text .lead {
+	color: rgba(0,0,0,0.9);
+	text-align: center;
+}
+.truck-img {
+	width: 100%;
+	max-width: 340px;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.10); 
+}
+.hero-text .mt-3 {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.featured-section{
+  padding: 36px 0 24px;
+}
+.section-title {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: var(--brand);
+	margin-bottom: 24px;
+	text-align: center;
+}
+.menu-card {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+.menu-card img {
+  height: 180px;
+  object-fit: cover;
+}
+	
+.cta-section{
+  background: linear-gradient(90deg, #fff6e0 0%, #ffefc1 100%);
+  padding: 32px 0 32px;
+  margin-top: 32px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 768px){
+  .hero-section{ padding: 28px 0 12px; }
+  .hero-text h1{ font-size: 1.4rem; }
+  .truck-img{ max-width: 100%; }
+  .featured-section{ padding: 18px 0 8px; }
+  .cta-section{ padding: 18px 0; }
+}

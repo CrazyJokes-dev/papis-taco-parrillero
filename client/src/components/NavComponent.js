@@ -8,6 +8,7 @@ function NavComponent() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
           <Nav className="justify-content-between">
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/contact-us">Contact Us</Nav.Link>
             <Nav.Link href="/location-and-hours">Location and Hours</Nav.Link>
             <Nav.Link href="#home">Menu</Nav.Link>

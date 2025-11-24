@@ -10,18 +10,18 @@ function AboutUs() {
   return (
     <div className="about-page">
       <Container>
-        <Row className="align-items-center about-top">
-          <Col md={6} className="about-hero">
+        <Row className="justify-content-md-center about-top">
+          <Col md={10} className="about-hero">
             <h1>Papi's Tacos Parrillero</h1>
             <p className="tagline">Traditional Mexican flavors crafted on the grill — tacos, salsas, and good vibes.</p>
-            <p className="lead">We are a family-run taco truck bringing authentic parrillero-style tacos to the neighborhood. Every dish is made with care using recipes passed down through generations and fresh, locally-sourced ingredients.</p>
+            <p className="lead">We are a family-run taco truck bringing authentic tacos to the neighborhood. Every dish is made with care using recipes passed down through generations and fresh, locally-sourced ingredients.</p>
             <div className="mt-3">
               <a href="/location-and-hours"><Button variant="warning" className="me-2">Find Our Location</Button></a>
               <a href="/contact-us"><Button variant="outline-dark">Contact Us</Button></a>
             </div>
           </Col>
 
-          <Col md={6} className="about-photo">
+          <Col md={10} className="about-photo">
             <Card className="photo-card">
               <img src="/ClearTacoLogo.jpg" alt="Papi's Tacos truck" className="photo" />
             </Card>

@@ -57,12 +57,24 @@ router.post('/addContact', async (req, res) => {
         subject: `Contact form: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`
       };
+      
+      // Save email to database
+      const newContact = new Contact({
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message,
+      });
 
+      // Send email and save to DB back to back
+      await newContact.save();
       await transporter.sendMail(mailOptions);
+
+      // Send a response msg back to frontend to let user know it was sent
       return res.json({ msg: 'Message sent' });
     } catch (err) {
-      console.error('Error sending contact email:', err);
       // fallthrough to logging response
+      console.error('Error sending contact email:', err);
+      return res.json({msg: 'Message saved to database (email send failed)'});
     }
   }
 

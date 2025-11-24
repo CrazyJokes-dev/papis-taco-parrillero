@@ -3,19 +3,20 @@ const router = express.Router();
 
 const nodemailer = require('nodemailer');
 const emailConfig = require('../../config/email');
+
 // Load Contact model
 const Contact = require('../../models/Contacts');
 
 
 // GET /api/contact
 // Description: Gets all contact messages (for admin/testing purposes)
+// Also sends the contact message via email since SMTP is configured
 router.get('/', async (req, res) => {
   try {
     const contacts = await Contact.find({})
     return res.status(200).json({
       count: contacts.length,
       data: contacts,
-      // idk: emailConfig.emailConfig.user  // TEST ON HOW TO CALL VARIABLES
     });
   } catch (err) {
     return res.status(500).json({
@@ -35,33 +36,35 @@ router.post('/addContact', async (req, res) => {
 
   // If SMTP configuration is available, try to send an email.
   // Configure via environment variables: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
-  // const smtpHost = emailConfig.emailConfig.host;
-  // if (smtpHost) {
-  //   try {
-  //     const transporter = nodemailer.createTransport({
-  //       host: smtpHost,
-  //       port: emailConfig.emailConfig.port,
-  //       secure: emailConfig.emailConfig.secure,
-  //       auth: {
-  //         user: emailConfig.emailConfig.user,
-  //         pass: emailConfig.emailConfig.pass
-  //       }
-  //     });
+  const smtpHost = emailConfig.emailConfig.host;
+  if (smtpHost) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: emailConfig.emailConfig.host,
+        port: emailConfig.emailConfig.port,
+        secure: emailConfig.emailConfig.secure,
+        auth: {
+          user: emailConfig.emailConfig.user,
+          pass: emailConfig.emailConfig.pass
+        },
+        tls : { rejectUnauthorized: false }
+      });
 
-  //     const mailOptions = {
-  //       from: 'monstertube101@gmail.com',
-  //       to: emailConfig.emailConfig.user,
-  //       subject: `Contact form: ${name}`,
-  //       text: `Name: ${name}\nEmail: ${email}\n\n${message}`
-  //     };
+      const mailOptions = {
+        from: `Papi's Taco Parrillero<${emailConfig.emailConfig.user}>`,
+        replyTo: emailConfig.emailConfig.user,
+        to: emailConfig.emailConfig.user,
+        subject: `Contact form: ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\n\n${message}`
+      };
 
-  //     await transporter.sendMail(mailOptions);
-  //     return res.json({ msg: 'Message sent' });
-  //   } catch (err) {
-  //     console.error('Error sending contact email:', err);
-  //     // fallthrough to logging response
-  //   }
-  // }
+      await transporter.sendMail(mailOptions);
+      return res.json({ msg: 'Message sent' });
+    } catch (err) {
+      console.error('Error sending contact email:', err);
+      // fallthrough to logging response
+    }
+  }
 
   // Save to database
   try {

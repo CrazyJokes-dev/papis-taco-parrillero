@@ -25,6 +25,8 @@ app.get('/', (req, res) => res.send('Hello world!'));
 app.use('/api/foods', foods);
 app.use('/api/contact', contact);
 
+console.log(process.env.PORT);
+
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

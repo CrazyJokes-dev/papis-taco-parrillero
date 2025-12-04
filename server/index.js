@@ -1,6 +1,7 @@
 // app.js
 
 const express = require('express');
+console.log(process.env.PORT);
 const connectDB = require('./config/db.js');
 const cors = require('cors');
 
@@ -25,7 +26,6 @@ app.get('/', (req, res) => res.send('Hello world!'));
 app.use('/api/foods', foods);
 app.use('/api/contact', contact);
 
-console.log(process.env.PORT);
 
 const port = process.env.PORT || 8000;
 

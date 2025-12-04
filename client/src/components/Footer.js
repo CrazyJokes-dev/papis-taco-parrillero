@@ -21,9 +21,9 @@ function Footer() {
 					<Col md={4} className="footer-social">
 						<h4>Follow Us</h4>
 						<div className="social-links">
-							<a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="social">Instagram</a>
-							<a href="https://facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className="social">Facebook</a>
-							<a href="https://wa.me/12487986784" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="social">WhatsApp</a>
+							{/* <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="social">Instagram</a> */}
+							<a href="https://www.facebook.com/p/Papis-Taco-Parrillero-100092604847004/" target="_blank" rel="noreferrer" aria-label="Facebook" className="social">Facebook</a>
+							{/* <a href="https://wa.me/12487986784" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="social">WhatsApp</a> */}
 						</div>
 					</Col>
 				</Row>

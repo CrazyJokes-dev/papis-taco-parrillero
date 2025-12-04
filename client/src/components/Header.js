@@ -21,8 +21,8 @@ function Header() {
         </nav>
 
         <div>
-          <a href="/order">
-            <button className="header-cta" aria-label="Order now">Order Now</button>
+          <a href="https://www.facebook.com/p/Papis-Taco-Parrillero-100092604847004/">
+            <button className="header-cta" aria-label="Facebook"><img width="30" height="30"src="/Font-F.png" alt="facebook-f"/></button>
           </a>
         </div>
       </div>

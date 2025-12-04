@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import '../LocationHours.css';
+import '../styles/LocationHours.css';
 
 function LocationHoursPage() {
   const hours = [

@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Alert from 'react-bootstrap/Alert';
-import '../ContactUs.css';
+import '../styles/ContactUs.css';
 
 function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -27,7 +27,7 @@ function ContactUs() {
 
     // Try to POST to backend API; fall back to mailto if network fails.
     const payload = { name, email, message };
-    fetch('/api/contact/addContact', {
+    fetch('https://papis-taco-server-production.up.railway.app/api/contact/addContact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

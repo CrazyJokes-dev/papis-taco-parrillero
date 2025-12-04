@@ -35,7 +35,6 @@ router.post('/addContact', async (req, res) => {
   }
 
   // If SMTP configuration is available, try to send an email.
-  // Configure via environment variables: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
   const smtpHost = process.env.SMTP_HOST;
   if (smtpHost) {
     try {
@@ -51,7 +50,7 @@ router.post('/addContact', async (req, res) => {
       });
 
       const mailOptions = {
-        from: `Papi's Taco Parrillero<${process.env.SMTP_USER}>`,
+        from: `DO-NOT-REPLY<${process.env.SMTP_USER}>`,
         replyTo: process.env.SMTP_USER,
         to: process.env.SMTP_USER,
         subject: `Contact form: ${name}`,
@@ -74,7 +73,6 @@ router.post('/addContact', async (req, res) => {
     } catch (err) {
       // fallthrough to logging response
       console.error('Error sending contact email:', err);
-      return res.json({msg: 'Message saved to database (email send failed)'});
     }
   }
 
@@ -86,7 +84,7 @@ router.post('/addContact', async (req, res) => {
       message: req.body.message,
     });
     await newContact.save();
-    return res.json({ msg: 'Message received (no SMTP configured)' });
+    return res.json({msg: 'Message saved to database (email send failed)'});
   } catch (err) {
     console.error('Error saving contact data:', err);
   }

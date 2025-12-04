@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import '../AboutUs.css';
+import '../styles/AboutUs.css';
 
 function AboutUs() {
   return (

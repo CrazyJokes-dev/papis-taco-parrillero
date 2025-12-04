@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const nodemailer = require('nodemailer');
-const emailConfig = require('../../config/email');
+// const emailConfig = require('../../config/email');
 
 // Load Contact model
 const Contact = require('../../models/Contacts');
@@ -36,24 +36,24 @@ router.post('/addContact', async (req, res) => {
 
   // If SMTP configuration is available, try to send an email.
   // Configure via environment variables: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO
-  const smtpHost = emailConfig.emailConfig.host;
+  const smtpHost = process.env.SMTP_HOST;
   if (smtpHost) {
     try {
       const transporter = nodemailer.createTransport({
-        host: emailConfig.emailConfig.host,
-        port: emailConfig.emailConfig.port,
-        secure: emailConfig.emailConfig.secure,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        secure: process.env.SMTP_SECURE,
         auth: {
-          user: emailConfig.emailConfig.user,
-          pass: emailConfig.emailConfig.pass
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
         },
         tls : { rejectUnauthorized: false }
       });
 
       const mailOptions = {
-        from: `Papi's Taco Parrillero<${emailConfig.emailConfig.user}>`,
-        replyTo: emailConfig.emailConfig.user,
-        to: emailConfig.emailConfig.user,
+        from: `Papi's Taco Parrillero<${process.env.SMTP_USER}>`,
+        replyTo: process.env.SMTP_USER,
+        to: process.env.SMTP_USER,
         subject: `Contact form: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`
       };

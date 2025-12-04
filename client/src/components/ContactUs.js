@@ -27,7 +27,7 @@ function ContactUs() {
 
     // Try to POST to backend API; fall back to mailto if network fails.
     const payload = { name, email, message };
-    fetch('https://papis-taco-server-production.up.railway.app/api/contact/addContact', {
+    fetch('https://api.papistacoparrillero.com/api/contact/addContact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

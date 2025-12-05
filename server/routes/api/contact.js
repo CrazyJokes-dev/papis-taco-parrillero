@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
+// import { Resend } from 'resend';
+const { Resend } = require('resend');
+const resend = new Resend(process.env.RESEND_API_KEY);
 // const emailConfig = require('../../config/email');
 
 // Load Contact model
@@ -35,27 +38,27 @@ router.post('/addContact', async (req, res) => {
   }
 
   // If SMTP configuration is available, try to send an email.
-  const smtpHost = process.env.SMTP_HOST;
+  const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
   if (smtpHost) {
     try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: process.env.SMTP_SECURE,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
-        },
-        tls : { rejectUnauthorized: false }
-      });
+      // const transporter = nodemailer.createTransport({
+      //   host: process.env.SMTP_HOST,
+      //   port: process.env.SMTP_PORT,
+      //   secure: process.env.SMTP_SECURE,
+      //   auth: {
+      //     user: process.env.SMTP_USER,
+      //     pass: process.env.SMTP_PASS
+      //   },
+      //   tls : { rejectUnauthorized: false }
+      // });
 
-      const mailOptions = {
-        from: `Papi's Taco Parrillero<${process.env.SMTP_USER}>`,
-        replyTo: process.env.SMTP_USER,
-        to: process.env.SMTP_USER,
-        subject: `Contact form: ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\n\n${message}`
-      };
+      // const mailOptions = {
+      //   from: `Papi's Taco Parrillero<${}>`,
+      //   replyTo: process.env.SMTP_USER,
+      //   to: process.env.SMTP_USER,
+      //   subject: `Contact form: ${name}`,
+      //   text: `Name: ${name}\nEmail: ${email}\n\n${message}`
+      // };
       
       // Save email to database
       const newContact = new Contact({
@@ -66,7 +69,13 @@ router.post('/addContact', async (req, res) => {
 
       // Send email and save to DB back to back
       await newContact.save();
-      await transporter.sendMail(mailOptions);
+      resend.emails.send({
+        from: 'Papi\'s Taco Parrillero <onboarding@resend.dev>',
+        to: 'slayerofdragon52@gmail.com',
+        subject: 'Hello World',
+        html: `<strong>Name:</strong> ${name}<br><strong>Email:</strong> ${email}<br><strong>Message:</strong> ${message}`
+      });
+      // await transporter.sendMail(mailOptions);
 
       // Send a response msg back to frontend to let user know it was sent
       return res.json({ msg: 'Message sent' });

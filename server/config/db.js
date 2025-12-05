@@ -1,6 +1,7 @@
 const {MongoClient} = require('mongodb');
 const mongoose = require('mongoose');
 
+// const emailConfig = require('./email');
 
 async function listDatabases(client){
     databasesList = await client.db().admin().listDatabases();

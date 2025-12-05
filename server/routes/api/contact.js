@@ -71,7 +71,7 @@ router.post('/addContact', async (req, res) => {
       await newContact.save();
       resend.emails.send({
         from: 'Papi\'s Taco Parrillero <onboarding@resend.dev>',
-        to: 'slayerofdragon52@gmail.com',
+        to: 'papistacosparrillero@gmail.com',
         subject: `Contact form: ${name}`,
         html: `<strong>Name:</strong> ${name}<br><strong>Email:</strong> ${email}<br><strong>Message:</strong> ${message}`
       });

@@ -50,7 +50,7 @@ router.post('/addContact', async (req, res) => {
       });
 
       const mailOptions = {
-        from: `DO-NOT-REPLY<${process.env.SMTP_USER}>`,
+        from: `Papi's Taco Parrillero<${process.env.SMTP_USER}>`,
         replyTo: process.env.SMTP_USER,
         to: process.env.SMTP_USER,
         subject: `Contact form: ${name}`,

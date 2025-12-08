@@ -70,7 +70,7 @@ router.post('/addContact', async (req, res) => {
       // Send email and save to DB back to back
       await newContact.save();
       resend.emails.send({
-        from: 'Papi\'s Taco Parrillero <onboarding@resend.dev>',
+        from: 'Papi\'s Taco Parrillero <papi@email.papistacoparrillero.com>',
         to: 'papistacosparrillero@gmail.com',
         subject: `Contact form: ${name}`,
         html: `<strong>Name:</strong> ${name}<br><strong>Email:</strong> ${email}<br><strong>Message:</strong> ${message}`

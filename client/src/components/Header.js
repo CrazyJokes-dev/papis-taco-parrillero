@@ -28,9 +28,9 @@ function Header() {
       </div>
 
       {/* Optional small hero / announcement below header */}
-      {/* <div style={{padding: '0 16px'}}>
-        <div className="header-hero">PAPI'S TACOS PARRILLERO IS NOW OPEN!</div>
-      </div> */}
+      <div style={{padding: '0 16px'}}>
+        <div className="header-hero">Watch For New Surprise Updates in 2026!</div>
+      </div>
     </header>
   );
 }

@@ -76,10 +76,10 @@
 	width:100%;
 	text-align:center;
 	padding: 18px 10px;
-	color: rgba(255,255,255,0.95);
-	font-size: 1.125rem;
+	color: rgba(255, 149, 0, 0.95);
+	font-size: 1.5rem;
 	font-weight:700;
-	background: linear-gradient(180deg, rgba(0,0,0,0.98), transparent);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), transparent);
 	margin-top: 6px;
 	border-radius: 6px;
 }

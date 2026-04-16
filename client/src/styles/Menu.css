@@ -1,0 +1,9 @@
+.menu-div {
+	height: 1000px;
+	width: 700px;
+}
+.menu-image {
+	height: 100%;
+	width: 100%;
+	visibility: visible;
+}

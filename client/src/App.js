@@ -4,6 +4,7 @@ import LocationHoursPage from './components/LocationHoursPage';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import Home from './components/Home';
+import Menu from './components/Menu';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/location-and-hours' element={<LocationHoursPage />} />
           <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/menu' element={<Menu />} />
         </Routes>
       </div>
     </Router>

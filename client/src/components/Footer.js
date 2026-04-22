@@ -18,7 +18,7 @@ function Footer() {
 						<p><strong>Email:</strong> <a href="mailto:papistacosparrillero@gmail.com">papistacosparrillero@gmail.com</a></p>
 						<p><strong>Phone:</strong> <a href="tel:+15178886524">(517) 888-6524</a></p>
 					</Col>
-					<Col md={4} className="footer-social">)
+					<Col md={4} className="footer-social">
 						<h4>Follow Us</h4>
 						<div className="social-links">
 							{/* <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="social">Instagram</a> */}

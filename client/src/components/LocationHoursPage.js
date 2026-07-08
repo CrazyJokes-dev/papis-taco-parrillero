@@ -65,7 +65,7 @@ function LocationHoursPage() {
             <div className="map-wrapper">
               <iframe
                 title="Papi's Tacos location"
-                src="https://www.google.com/maps?q=Mary's+Fabulous+Chicken+%26+Fish&output=embed"
+                src="https://www.google.com/maps?q=Papi's+Taco+Parrillero&output=embed"
                 width="100%"
                 height="360"
                 style={{ border: 0 }}

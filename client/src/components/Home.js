@@ -33,16 +33,16 @@ function Home() {
           <Row className="g-4">
             <Col md={4}>
               <Card className="menu-card">
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Al Pastor Taco" />
+                <Card.Img variant="top" src="https://images.unsplash.com/photo-1613409385222-3d0decb6742a?q=80&w=1170&auto=format&fit=crop&w=400&q=80" alt="Al Pastor Taco" />
                 <Card.Body>
                   <Card.Title>Al Pastor</Card.Title>
-                  <Card.Text>Marinated pork, pineapple, onion, cilantro, and salsa roja on a handmade tortilla.</Card.Text>
+                  <Card.Text>Marinated pork, onion, cilantro, and salsa on a soft corn tortilla.</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4}>
               <Card className="menu-card">
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=1194&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Carne Asada Taco" />
+                <Card.Img variant="top" src="https://images.unsplash.com/photo-1572284918354-8b5c764b1215?q=80&w=1170&auto=format&fit=crop&w=400&q=80" alt="Carne Asada Taco" />
                 <Card.Body>
                   <Card.Title>Carne Asada</Card.Title>
                   <Card.Text>Grilled steak, fresh lime, onion, cilantro, and salsa verde on a warm tortilla.</Card.Text>
@@ -51,10 +51,10 @@ function Home() {
             </Col>
             <Col md={4}>
               <Card className="menu-card">
-                <Card.Img variant="top" src="https://plus.unsplash.com/premium_photo-1700401809310-18a66e23a669?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Veggie Taco" />
+                <Card.Img variant="top" src="https://images.unsplash.com/photo-1719948515819-71265e1abb0d?q=80&w=1074&auto=format&fit=crop&w=400&q=80" alt="Veggie Taco" />
                 <Card.Body>
-                  <Card.Title>Veggie</Card.Title>
-                  <Card.Text>Grilled seasonal veggies, queso fresco, and house salsa on a soft tortilla.</Card.Text>
+                  <Card.Title>Chicken</Card.Title>
+                  <Card.Text>Marinated Shredded Chicken, onion, cilantro, and house salsa on a corn tortilla.</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

@@ -29,7 +29,7 @@ function Header() {
 
       {/* Optional small hero / announcement below header */}
       <div style={{padding: '0 16px'}}>
-        <div className="header-hero">Watch For New Surprise Updates in 2026!</div>
+        <div className="header-hero">We are now open for Breakfast from 9am - 11am! Come here for some breakfast burritos!</div>
       </div>
     </header>
   );

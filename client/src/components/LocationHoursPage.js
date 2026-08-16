@@ -8,13 +8,13 @@ import '../styles/LocationHours.css';
 
 function LocationHoursPage() {
   const hours = [
-    ['Sunday', '12pm - 5pm'],
-    ['Monday', 'Closed for the day'],
-    ['Tuesday', '11am - 9pm'],
-    ['Wednesday', '11am - 9pm'],
-    ['Thursday', '11am - 9pm'],
-    ['Friday', '11am - 9pm'],
-    ['Saturday', '11am - 9pm'],
+    ['Sunday', 'Closed for the day'],
+    ['Monday', '9am - 8pm'],
+    ['Tuesday', '9am - 8pm'],
+    ['Wednesday', '9am - 8pm'],
+    ['Thursday', '9am - 8pm'],
+    ['Friday', '9am - 8pm'],
+    ['Saturday', '9am - 8pm'],
   ];
 
   return (

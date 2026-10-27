@@ -7,7 +7,7 @@ function Menu() {
 			{/* <h1>Our Menu</h1> */}
 			<img src="TacoMenuFirst.png" alt="Restaurant Menu" className="menu-image" />
 			<img src="TacoMenuSecond.png" alt="Restaurant Menu" className="menu-image" />
-			<img src="BreakfastMenu.jpg" alt="Breakfast Menu" className="menu-image" />
+			<img src="BreakfastMenu.png" alt="Breakfast Menu" className="menu-image" />
 		</div>
 	);
 }
